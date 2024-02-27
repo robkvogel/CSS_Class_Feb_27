@@ -1,0 +1,26 @@
+/* hello */
+body{
+background-color: pink
+
+}
+
+p{
+color: yellow
+
+}
+
+p a {
+  color: green;
+  text-decoration: none;
+
+}
+
+#title{
+font-size: 56px;
+
+}
+
+.bordered {
+border: 2px solid black
+
+}
