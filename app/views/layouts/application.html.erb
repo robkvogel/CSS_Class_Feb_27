@@ -23,19 +23,29 @@
 </head>
 
 <body>
-  <div>
-    <p>
-      <% @user = User.find_by({ "id" => session["user_id"] }) %>
-      <% if @user == nil %>
-        <a href="/users/new">Sign Up</a>
-        |
-        <a href="/login">Login</a>
-      <% else %>
-        Logged in as: <%= @user["first_name"] %>
-        |
-        <a href="/logout">Logout</a>
-      <% end %>
-   </p>
+  <nav class="navbar bg-primary mb-3" data-bs-theme="dark">
+    <div class="container">
+      <a class="btn btn-danger" href="/" >My App </a>
+      <span class="navbar-text">
+        <% @user = User.find_by({ "id" => session["user_id"] }) %>
+        <% if @user == nil %>
+          <a href="/users/new" >Sign Up</a>
+          |
+          <a href="/login">Login</a>
+        <% else %>
+          Logged in as: <%= @user["first_name"] %>
+          |
+          <a href="/logout">Logout</a>
+        <% end %>
+
+      </span>
+    </div>
+  </nav>
+
+
+
+  <div class = "container">
+   
 
   <div class = "bordered">
     <h1 id="title"> Tacostagram</h1>
@@ -44,7 +54,7 @@
     </div>
   </div>
 
-  <div>
+  <div class = alert alert-primary>
     <%= flash["notice"] %>
   </div>
 
